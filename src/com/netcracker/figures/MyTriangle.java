@@ -35,9 +35,9 @@ public class MyTriangle {
         double edge2 = v2.distance(v3);
         double edge3 = v3.distance(v1);
 
-        if (edge1 == edge2 && edge2 == edge3){
+        if (Math.abs(edge1 - edge2) < 0.00001 && Math.abs(edge2 - edge3) < 0.00001){
             return "Equilateral";
-        } else if (edge1 == edge2 || edge2 == edge3 || edge3 == edge1){
+        } else if (Math.abs(edge1 - edge2) < 0.00001 || Math.abs(edge2 - edge3) < 0.00001 || Math.abs(edge3 - edge1) < 0.00001){
             return "Isosceles";
         } else {
             return "Scalene";
