@@ -40,19 +40,19 @@ public class MyComplex {
     }
 
     public boolean isReal(){
-        return real != 0;
+        return Double.compare(real, 0) != 0;
     }
 
     public boolean isImaginary(){
-        return imag != 0;
+        return Double.compare(imag, 0) != 0;
     }
 
     public boolean equals(double real, double imag){
-        return Math.abs(this.real - real) < 0.00001 && Math.abs(this.imag - imag) < 0.00001;
+        return Double.compare(this.real, real) == 0 && Double.compare(this.imag, imag) == 0;
     }
 
     public boolean equals(MyComplex complex){
-        return Math.abs(real - complex.real) < 0.00001 && Math.abs(imag - complex.imag) < 0.00001;
+        return Double.compare(real, complex.real) == 0 && Double.compare(imag, complex.imag) == 0;
     }
 
     public double magnitude(){
