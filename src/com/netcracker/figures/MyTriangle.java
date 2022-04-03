@@ -1,5 +1,7 @@
 package com.netcracker.figures;
 
+import java.util.Objects;
+
 public class MyTriangle {
     private MyPoint v1;
     private MyPoint v2;
@@ -42,5 +44,20 @@ public class MyTriangle {
         } else {
             return "Scalene";
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyTriangle triangle = (MyTriangle) o;
+        return Objects.equals(v1, triangle.v1) &&
+                Objects.equals(v2, triangle.v2) &&
+                Objects.equals(v3, triangle.v3);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(v1, v2, v3);
     }
 }
